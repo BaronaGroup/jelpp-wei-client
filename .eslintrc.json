@@ -9,7 +9,8 @@
   "extends": ["eslint:recommended"],
   "parser": "babel-eslint",
   "env": {
-    "es6": true
+    "es6": true,
+    "node": true
   },
   "rules": {
     "consistent-return": 2,
