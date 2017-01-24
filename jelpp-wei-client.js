@@ -24,7 +24,7 @@ module.exports = async options => {
   function checkRequiredOptions(requiredOptions) {
     for (let option of requiredOptions) {
       if (options[option] === undefined) {
-        throw new Error(`Jelpp-Wei requires ${options} to be specified`)
+        throw new Error(`Jelpp-Wei requires ${option} to be specified`)
       }
     }
   }
@@ -46,7 +46,7 @@ module.exports = async options => {
 
   function makeRequest(method, url, payload) {
     return requestPromise({
-      url: options.jelppWeiUrl + '/api/app/' + encodeURIComponent(options.appId) + '/' + url,
+      url: options.jelppWeiURL + '/api/app/' + encodeURIComponent(options.appId) + '/' + url,
       json: payload,
       method,
       headers: {
