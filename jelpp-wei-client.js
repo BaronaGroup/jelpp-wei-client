@@ -1,4 +1,5 @@
-const requestPromise = require('request-promise')
+const requestPromise = require('request-promise'),
+  _ = require('lodash')
 
 module.exports = async options => {
 
@@ -18,6 +19,14 @@ module.exports = async options => {
 
   return {
     requestLogin
+  }
+
+  function checkRequiredOptions(requiredOptions) {
+    for (let option of requiredOptions) {
+      if (options[option] === undefined) {
+        throw new Error(`Jelpp-Wei requires ${options} to be specified`)
+      }
+    }
   }
 
   async function requestLogin(requestOptions = {}) {
