@@ -3,24 +3,32 @@
   "private": true,
   "version": "0.0.1",
   "dependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.5.0",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-env": "^1.1.8",
     "bluebird": "^3.4.7",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "lodash": "^4.17.0",
     "request-promise": "^4.1.1",
     "winston": "^2.3.1"
   },
   "devDependencies": {
+    "babel-eslint": "^7.1.1",
     "chai": "^3.5.0",
     "eslint": "^3.14.0",
     "eslint-plugin-react": "^6.9.0",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0"
   },
-  "main": "./jelpp-wei-client.js",
+  "main": "./dist/jelpp-wei-client.js",
   "scripts": {
     "node-test": "mocha test/node",
     "eslint": "./node_modules/.bin/eslint . --ext .js,.jsx",
     "node-dev": "NODE=node-dev npm run $*",
-    "dev": "NODE=nodemon npm run $*"
+    "dev": "NODE=nodemon npm run $*",
+    "gulp": "gulp",
+    "install": "gulp"
   },
   "engines": {
     "node": ">= 6.0.0"
