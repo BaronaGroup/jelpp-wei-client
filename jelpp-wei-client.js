@@ -130,9 +130,9 @@ module.exports = async options => {
 function getSimpleLogger() {
   return {
     notice: () => {},
-    info: (...args) => console.log('Wei:', ...args.map(mapper)),
-    warn: (...args) => console.warn('Wei:', ...args.map(mapper)),
-    error: (...args) => console.error('Wei:', ...args.map(mapper))
+    info: (...args) => console.log('Wei:', ...args.map(mapper)), // eslint-disable-line no-console
+    warn: (...args) => console.warn('Wei:', ...args.map(mapper)), // eslint-disable-line no-console
+    error: (...args) => console.error('Wei:', ...args.map(mapper)) // eslint-disable-line no-console
   }
 
   function mapper(e) {
