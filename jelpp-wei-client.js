@@ -47,10 +47,10 @@ module.exports = async options => {
 
   async function requestLogin(requestOptions = {}) {
     const payload = _.clone(requestOptions)
-    if (!payload.roles) {
-      payload.roles = options.defaultRequiredRoles
+    if (!payload.requiredRoles) {
+      payload.requiredRoles = options.defaultRequiredRoles
     }
-    await makeRequest('POST', 'request-login', payload)
+    return await makeRequest('POST', 'request-login', payload)
   }
 
   async function refreshRegistration() {
