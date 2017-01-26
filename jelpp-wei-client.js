@@ -23,7 +23,8 @@ module.exports = async options => {
   await ensureRegistrationIsUpToDate()
 
   return {
-    requestLogin
+    requestLogin,
+    getLoginDetails
   }
 
   async function ensureRegistrationIsUpToDate() {
@@ -51,6 +52,11 @@ module.exports = async options => {
       payload.requiredRoles = options.defaultRequiredRoles
     }
     return await makeRequest('POST', 'request-login', payload)
+  }
+
+
+  async function getLoginDetails(token) {
+    return await makeRequest('GET', 'login-details/' + encodeURIComponent(token))
   }
 
   async function refreshRegistration() {
@@ -118,7 +124,7 @@ module.exports = async options => {
 
     return requestPromise({
       url: `${options.jelppWeiURL}/api/app/${instanceId}/${appId}/${url}`,
-      json: payload,
+      json: payload || true,
       method,
       headers: {
         'x-jelpp-wei-api-key': options.appKey
