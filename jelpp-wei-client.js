@@ -24,7 +24,9 @@ module.exports = async options => {
 
   return {
     requestLogin,
-    getLoginDetails
+    getLoginDetails,
+    listUsers,
+    inviteUser
   }
 
   async function ensureRegistrationIsUpToDate() {
@@ -59,6 +61,18 @@ module.exports = async options => {
     return await makeRequest('GET', 'login-details/' + encodeURIComponent(token))
   }
 
+  async function listUsers(requestOptions) {
+    return await makeRequest('POST', 'list-users', requestOptions)
+  }
+
+  async function inviteUser(userDetails, invitationDetails) {
+    const finalInvitationDetails = Object.assign({}, options.invitation, invitationDetails)
+    return await makeRequest('POST', 'create-user/' + encodeURIComponent(userDetails.email), {
+      user: userDetails,
+      invitation: finalInvitationDetails
+    })
+  }
+
   async function refreshRegistration() {
     try {
       log.notice('Refreshing app registration')
@@ -86,7 +100,7 @@ module.exports = async options => {
         },
         method: 'POST',
         headers: {
-          'x-jelpp-wei-api-key':options.instanceKey
+          'x-jelpp-wei-api-key': options.instanceKey
         }
       })
     } catch (err) {
