@@ -57,8 +57,8 @@ module.exports = async options => {
   }
 
 
-  async function getLoginDetails(token) {
-    return await makeRequest('GET', 'login-details/' + encodeURIComponent(token))
+  async function getLoginDetails(token, options) {
+    return await makeRequest('GET', 'login-details/' + encodeURIComponent(token) + '?' + toQueryParameters(options))
   }
 
   async function listUsers(requestOptions) {
@@ -158,4 +158,8 @@ function getSimpleLogger() {
   function mapper(e) {
     return _.get(e, 'message') || e
   }
+}
+
+function toQueryParameters(opts) {
+  return _.pairs(opts).map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&')
 }
