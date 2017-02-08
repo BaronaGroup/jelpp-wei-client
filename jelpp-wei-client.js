@@ -78,7 +78,8 @@ module.exports = async options => {
       log.notice('Refreshing app registration')
       await makeRequest('POST', 'update-service-details', {
         postLoginURL: options.postLoginURL,
-        language: options.language
+        language: options.language,
+        instance: options.instance
       })
     } catch (err) {
       if (_.get(err, 'response.body.userError.errorType') === 'application-not-registered') {
