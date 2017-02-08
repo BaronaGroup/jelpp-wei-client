@@ -162,5 +162,5 @@ function getSimpleLogger() {
 }
 
 function toQueryParameters(opts) {
-  return _.pairs(opts).map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&')
+  return _.toPairs(opts).map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&')
 }
