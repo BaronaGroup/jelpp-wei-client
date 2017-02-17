@@ -20,7 +20,8 @@
     "eslint": "^3.14.0",
     "eslint-plugin-react": "^6.9.0",
     "mocha": "^3.2.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "post-commit": "0.0.1"
   },
   "main": "./dist/jelpp-wei-client.js",
   "scripts": {
@@ -31,6 +32,7 @@
     "gulp": "gulp",
     "install": "gulp"
   },
+  "post-commit": ["eslint"],
   "engines": {
     "node": ">= 6.0.0"
   }
