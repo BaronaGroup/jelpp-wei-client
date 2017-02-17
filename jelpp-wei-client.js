@@ -58,8 +58,8 @@ module.exports = async options => {
   }
 
 
-  async function getLoginDetails(token, options) {
-    return await makeRequest('GET', 'login-details/' + encodeURIComponent(token) + '?' + toQueryParameters(options))
+  async function getLoginDetails(token, requestOptions) {
+    return await makeRequest('GET', 'login-details/' + encodeURIComponent(token) + '?' + toQueryParameters(requestOptions))
   }
 
   async function listUsers(requestOptions) {
