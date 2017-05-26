@@ -27,7 +27,8 @@ module.exports = async options => {
     getLoginDetails,
     listUsers,
     inviteUser,
-    callAppPlugin
+    callAppPlugin,
+    ping
   }
 
   async function ensureRegistrationIsUpToDate() {
@@ -64,6 +65,10 @@ module.exports = async options => {
 
   async function listUsers(requestOptions) {
     return await makeRequest('POST', 'list-users', requestOptions)
+  }
+
+  async function ping() {
+    return await makeRequest('POST', 'ping')
   }
 
   async function callAppPlugin(plugin, operation, requestOptions) {
