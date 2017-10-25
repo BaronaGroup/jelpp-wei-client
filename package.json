@@ -1,7 +1,7 @@
 {
   "name": "jelpp-wei-client",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.1",
   "dependencies": {
     "bluebird": "^3.4.7",
     "lodash": "^4.17.0",
@@ -18,7 +18,7 @@
     "nodemon": "^1.11.0",
     "post-commit": "0.0.1"
   },
-  "main": "./dist/jelpp-wei-client.js",
+  "main": "./jelpp-wei-client.js",
   "scripts": {
     "node-test": "mocha test/node",
     "eslint": "./node_modules/.bin/eslint . --ext .js,.jsx",
