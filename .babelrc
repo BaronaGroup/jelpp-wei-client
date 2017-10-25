@@ -1,7 +1,0 @@
-{
-  "plugins": [
-  ],
-  "presets": [["env", {"targets":{"node":"current"}}]],
-  "ignore": [
-  ]
-}
