@@ -28,6 +28,8 @@ module.exports = async options => {
     listUsers,
     inviteUser,
     callAppPlugin,
+    addRole,
+    removeRole,
     ping
   }
 
@@ -65,6 +67,14 @@ module.exports = async options => {
 
   async function listUsers(requestOptions) {
     return await makeRequest('POST', 'list-users', requestOptions)
+  }
+
+  async function addRole(userId, role, requestOptions) {
+    return await makeRequest('POST', 'add-role', Object.assign({}, requestOptions, {userId, role}))
+  }
+
+  async function removeRole(userId, role, requestOptions) {
+    return await makeRequest('POST', 'remove-role', Object.assign({}, requestOptions, {userId, role}))
   }
 
   async function ping() {
