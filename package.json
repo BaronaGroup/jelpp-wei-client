@@ -3,25 +3,22 @@
   "private": true,
   "version": "1.2.0",
   "dependencies": {
-    "bluebird": "^3.4.7",
-    "lodash": "^4.17.0",
-    "request": "^2.79.0",
-    "request-promise": "^4.1.1",
-    "winston": "^2.3.1"
+    "bluebird": "^3.5.1",
+    "lodash": "^4.17.10",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "chai": "^3.5.0",
-    "eslint": "^3.14.0",
-    "eslint-plugin-react": "^6.9.0",
-    "mocha": "^3.2.0",
-    "nodemon": "^1.11.0",
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.2.0",
+    "eslint-plugin-react": "^7.10.0",
+    "nodemon": "^1.18.3",
     "post-commit": "0.0.1"
   },
   "main": "./jelpp-wei-client.js",
   "scripts": {
     "node-test": "mocha test/node",
-    "eslint": "./node_modules/.bin/eslint . --ext .js,.jsx",
+    "eslint": "./node_modules/.bin/eslint . --ext .js,.jsx #",
     "node-dev": "NODE=node-dev npm run $*",
     "dev": "NODE=nodemon npm run $*"
   },
