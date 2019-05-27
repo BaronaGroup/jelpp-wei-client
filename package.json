@@ -12,7 +12,7 @@
     "babel-eslint": "8.2.6",
     "eslint": "5.2.0",
     "eslint-plugin-react": "7.10.0",
-    "nodemon": "1.18.3",
+    "nodemon": "1.19.1",
     "post-commit": "0.0.1"
   },
   "main": "./jelpp-wei-client.js",
